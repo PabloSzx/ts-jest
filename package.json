@@ -1,6 +1,6 @@
 {
-  "name": "ts-jest",
-  "version": "24.2.0",
+  "name": "@pablosz/ts-jest",
+  "version": "24.2.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": "cli.js",
@@ -31,8 +31,6 @@
     "doc:build-commit": "npm run doc:build && cd docs/_site && git add --all && git commit -m \"Updates github pages\"",
     "changelog": "node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run test",
-    "preversion": "npm run test",
     "update:e2e": "node scripts/update-e2e-templates.js",
     "version": "npm run changelog && git add CHANGELOG.md"
   },
@@ -70,13 +68,6 @@
   },
   "peerDependencies": {
     "jest": ">=24 <25"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "post-commit": "git reset"
-    }
   },
   "devDependencies": {
     "@commitlint/cli": "8.x",
